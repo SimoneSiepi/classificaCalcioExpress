@@ -1,0 +1,23 @@
+extends layout
+
+block contenuto
+    if squadre
+        div.block_form
+            form(action="/calcoloClassifica", method="post")
+                label(for="squadraCasa") squadra casa
+                br
+                select(name="squadraCasa", id='squadraCasa')
+                    each squadra in squadre
+                        option(value=squadra.nomeSquadra)=squadra.nomeSquadra
+                br
+                label(for="squadraOspite") squadra ospite
+                br
+                select(name="squadraOspite", id='squadraOspite')
+                    each squadra in squadre 
+                        option(value=squadra.nomeSquadra)=squadra.nomeSquadra   
+                br
+                button(type='submit') inserisci partita
+                br
+                a#formButton(href="#") classifica
+    else 
+        p file non trovato 
