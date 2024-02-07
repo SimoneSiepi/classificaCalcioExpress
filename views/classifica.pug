@@ -1,0 +1,15 @@
+extends layout
+
+block contenuto
+    if squadre
+        div.boxClassifica
+            table(id="tableClassifica")
+                tr 
+                    th Squadra
+                    th Punteggio
+                each squadra in squadre.sort((a, b) => b.punti - a.punti)
+                    tr 
+                        td= squadra.nomeSquadra
+                        td= squadra.punti
+    else 
+        p file non trovato

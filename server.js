@@ -57,7 +57,7 @@ function save() {
 }
 
 const squadre = read();
-console.log(squadre);
+//console.log(squadre);
 
 app.set("view engine", "pug");
 app.set("views", "./views");
@@ -72,15 +72,27 @@ app.use(express.static(path.join(__dirname, "public", "script")));
 
 //root
 app.get("/", (req, res) => {
-  res.render("index");
-});
-
-app.get("/form_calcio", (req, res) => {
-  res.render("form", { squadre: squadre.squadre });
+  res.render("index", { squadre });
 });
 
 app.post("/calcoloClassifica",(req,res)=>{
-  
+  const { squadraCasa, squadraOspite, goalCasa, goalOspite } = req.body;
+  const indexCasa=squadre.findIndex((team)=> team.nomeSquadra===squadraCasa);
+  const indexOspite=squadre.findIndex((team)=> team.nomeSquadra===squadraOspite);
+  if (goalCasa>goalOspite) {
+    squadre[indexCasa].punti+=3;
+  }else if (goalOspite>goalCasa) {
+    squadre[indexOspite].punti+=3;
+  }else if (goalCasa==goalOspite) {
+    squadre[indexCasa].punti+=1;
+    squadre[indexOspite].punti+=1;
+  }
+  save();
+  res.render("index",{  squadre });
+});
+
+app.get("/classifica", (req,res)=>{
+  res.render("classifica",{ squadre })
 });
 
 app.listen(port, () => {

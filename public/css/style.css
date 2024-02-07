@@ -18,8 +18,8 @@ body {
 }
 
 .block_form {
-    max-width: 400px; /* Aggiungi una larghezza massima al form per una migliore leggibilità */
-    margin: 0 auto; /* Centra il form orizzontalmente nella pagina */
+    max-width: 400px; 
+    margin: 0 auto; 
 }
 
 #form{
@@ -29,21 +29,21 @@ body {
 .label-container {
     display: flex;
     flex-direction: column;
-    margin-bottom: 10px; /* Aggiungi spaziatura tra le etichette */
+    margin-bottom: 10px; 
 }
 
 select,
 input[type="number"] {
     width: 100%;
-    padding: 8px; /* Aggiungi spaziatura uniforme */
-    margin: 5px 0; /* Aggiungi spaziatura sopra e sotto */
+    padding: 8px; 
+    margin: 5px 0; 
     box-sizing: border-box;
 }
 
 .boxGoalForm {
     display: flex;
     flex-direction: column;
-    margin-bottom: 10px; /* Aggiungi spaziatura tra i boxGoal */
+    margin-bottom: 10px; 
 }
 
 button {
@@ -86,3 +86,30 @@ a.button {
 a.button:hover {
     background-color: #45a049;
 }
+
+
+#tableClassifica {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px; /* Aggiungi spaziatura sopra la tabella */
+}
+
+#tableClassifica th, #tableClassifica td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+#tableClassifica th {
+    background-color: burlywood;
+    color: white;
+}
+
+#tableClassifica tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#tableClassifica tr:hover {
+    background-color: #ddd;
+}
+

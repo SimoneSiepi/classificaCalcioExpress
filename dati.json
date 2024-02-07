@@ -1,14 +1,42 @@
-{
-    "squadre": [
-        {"nomeSquadra": "Atalanta", "punti": 0},
-        {"nomeSquadra": "Fiorentina", "punti": 0},
-        {"nomeSquadra": "Juventus", "punti": 0},
-        {"nomeSquadra": "Monza", "punti": 0},
-        {"nomeSquadra": "Sassuolo", "punti": 0},
-        {"nomeSquadra": "Bologna", "punti": 0},
-        {"nomeSquadra": "Frosinone", "punti": 0},
-        {"nomeSquadra": "Lazio", "punti": 0},
-        {"nomeSquadra": "Napoli", "punti": 0},
-        {"nomeSquadra": "Torino", "punti": 0}
-    ]
-}
+[
+ {
+  "nomeSquadra": "Atlanta",
+  "punti": 6
+ },
+ {
+  "nomeSquadra": "Fiorentina",
+  "punti": 3
+ },
+ {
+  "nomeSquadra": "Juventus",
+  "punti": 1
+ },
+ {
+  "nomeSquadra": "Monza",
+  "punti": 1
+ },
+ {
+  "nomeSquadra": "Sassuolo",
+  "punti": 3
+ },
+ {
+  "nomeSquadra": "Bologna",
+  "punti": 3
+ },
+ {
+  "nomeSquadra": "Frosinone",
+  "punti": 0
+ },
+ {
+  "nomeSquadra": "Lazio",
+  "punti": 0
+ },
+ {
+  "nomeSquadra": "Napoli",
+  "punti": 0
+ },
+ {
+  "nomeSquadra": "Torino",
+  "punti": 0
+ }
+]

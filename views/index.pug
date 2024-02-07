@@ -1,13 +1,32 @@
 extends layout
 
 block contenuto
-    div.blocco_menu
-        ul.lista_menu
-            li 
-                a(href="/form_calcio")
-                    img.icona_lista(src="002-soccer-player.png", alt="non worka")
-            li 
-                a(href="")
-                    img(src="001-goal.png", alt="no")
-
-        
+    if squadre
+        div.block_form
+            form(action="/calcoloClassifica", method="post" id="form")
+                label(for="squadraCasa") squadra casa
+                br
+                select(name="squadraCasa", id='squadraCasa' /*onchange=updateSquadre('squadraCasa', 'squadraOspite')*/)
+                    each squadra in squadre
+                        option(value=squadra.nomeSquadra)=squadra.nomeSquadra
+                br
+                label(for="squadraOspite") squadra ospite
+                br
+                select(name="squadraOspite", id='squadraOspite' /*onchange=updateSquadre('squadraCasa', 'squadraOspite')*/)
+                    each squadra in squadre 
+                        option(value=squadra.nomeSquadra)=squadra.nomeSquadra   
+                br
+                div.boxGoalForm
+                    div.boxGoalCasa
+                        label(for="goalCasa") goal squadra casa
+                        br
+                        input(type="number", name="goalCasa" id="goalCasa")
+                    div.boxGoalOspite
+                        label(for="goalOspite") goal squadra Ospite
+                        br 
+                        input(type="number", name="goalOspite" id="goalOspite") 
+                button(type='submit') inserisci partita
+                br
+                a.button(href="/classifica") classifica
+    else 
+        p file non trovato 
