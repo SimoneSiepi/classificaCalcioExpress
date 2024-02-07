@@ -3,7 +3,7 @@ extends layout
 block contenuto
     if squadre
         div.block_form
-            form(action="/calcoloClassifica", method="post")
+            form(action="/calcoloClassifica", method="post" id="form")
                 label(for="squadraCasa") squadra casa
                 br
                 select(name="squadraCasa", id='squadraCasa')
@@ -16,8 +16,17 @@ block contenuto
                     each squadra in squadre 
                         option(value=squadra.nomeSquadra)=squadra.nomeSquadra   
                 br
+                div.boxGoalForm
+                    div.boxGoalCasa
+                        label(for="goalCasa") goal squadra casa
+                        br
+                        input(type="number", name="goalCasa" id="goalCasa")
+                    div.boxGoalOspite
+                        label(for="goalOspite") goal squadra Ospite
+                        br 
+                        input(type="number", name="goalOspite" id="goalOspite") 
                 button(type='submit') inserisci partita
                 br
-                a#formButton(href="#") classifica
+                a.button(href="#") classifica
     else 
         p file non trovato 
